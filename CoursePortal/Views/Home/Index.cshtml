@@ -1,0 +1,273 @@
+﻿@{
+ViewData["Title"] = "CoursePortal - Home";
+}
+
+<!-- ================= HERO ================= -->
+
+<section class="bg-light py-5">
+    <div class="container py-lg-5">
+
+        <div class="row align-items-center g-5">
+
+            <!-- Hero Content -->
+            <div class="col-lg-7">
+
+                <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-2 mb-4">
+                    🎓 Student Course Management Platform
+                </span>
+
+                <h1 class="display-3 fw-bold text-dark mb-4">
+                    Manage Learning.
+                    <span class="text-primary">Simply.</span>
+                </h1>
+
+                <p class="fs-5 text-secondary mb-4">
+                    CoursePortal brings students, courses and enrollments
+                    together in one simple and organized platform.
+                </p>
+
+                <div class="d-flex flex-wrap gap-3">
+
+                    <a asp-area="Identity"
+                       asp-page="/Account/Register"
+                       class="btn btn-primary btn-lg px-4">
+                        Get Started →
+                    </a>
+
+                    <a asp-page="/About"
+                       class="btn btn-outline-dark btn-lg px-4">
+                        Explore CoursePortal
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Dashboard Preview -->
+            <div class="col-lg-5">
+
+                <div class="card border-0 shadow-lg rounded-4">
+                    <div class="card-body p-4">
+
+                        <!-- Dashboard Header -->
+                        <div class="d-flex justify-content-between align-items-center border-bottom pb-3 mb-4">
+
+                            <h5 class="fw-bold mb-0">
+                                CoursePortal Dashboard
+                            </h5>
+
+                            <div class="d-flex gap-1">
+                                <span class="rounded-circle bg-secondary-subtle p-1"></span>
+                                <span class="rounded-circle bg-secondary-subtle p-1"></span>
+                                <span class="rounded-circle bg-secondary-subtle p-1"></span>
+                            </div>
+
+                        </div>
+
+                        <!-- Statistics -->
+                        <div class="row g-3 mb-3">
+
+                            <div class="col-6">
+                                <div class="bg-light rounded-3 p-3">
+                                    <small class="text-secondary">My Courses</small>
+                                    <h3 class="fw-bold mt-2 mb-0">08</h3>
+                                </div>
+                            </div>
+
+                            <div class="col-6">
+                                <div class="bg-light rounded-3 p-3">
+                                    <small class="text-secondary">Enrollments</small>
+                                    <h3 class="fw-bold mt-2 mb-0">12</h3>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- Course 1 -->
+                        <div class="d-flex justify-content-between align-items-center border rounded-3 p-3 mb-3">
+
+                            <div>
+                                <strong>Web Development</strong>
+                                <p class="text-secondary small mb-0">
+                                    Computer Science
+                                </p>
+                            </div>
+
+                            <span class="badge bg-primary">Active</span>
+
+                        </div>
+
+                        <!-- Course 2 -->
+                        <div class="d-flex justify-content-between align-items-center border rounded-3 p-3 mb-3">
+
+                            <div>
+                                <strong>Database Systems</strong>
+                                <p class="text-secondary small mb-0">
+                                    Computer Science
+                                </p>
+                            </div>
+
+                            <span class="badge bg-success">Enrolled</span>
+
+                        </div>
+
+                        <!-- Course 3 -->
+                        <div class="d-flex justify-content-between align-items-center border rounded-3 p-3">
+
+                            <div>
+                                <strong>Software Engineering</strong>
+                                <p class="text-secondary small mb-0">
+                                    Software Engineering
+                                </p>
+                            </div>
+
+                            <span class="badge bg-primary">Active</span>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= FEATURES ================= -->
+
+<section class="py-5" id="features">
+    <div class="container py-lg-5">
+
+        <!-- Section Heading -->
+        <div class="text-center mb-5">
+
+            <span class="text-primary fw-bold text-uppercase">
+                Why CoursePortal
+            </span>
+
+            <h2 class="display-6 fw-bold mt-2">
+                Everything in One Place
+            </h2>
+
+            <p class="text-secondary mx-auto mt-3" style="max-width: 600px;">
+                A simple platform designed to make course and student
+                management easier for everyone.
+            </p>
+
+        </div>
+
+        <!-- Feature Cards -->
+        <div class="row g-4">
+
+            <!-- Student Management -->
+            <div class="col-md-4">
+
+                <div class="card h-100 border shadow-sm rounded-4">
+                    <div class="card-body p-4">
+
+                        <div class="bg-primary-subtle text-primary rounded-3 d-inline-flex p-3 mb-4">
+                            <span class="fs-3">👨‍🎓</span>
+                        </div>
+
+                        <h4 class="fw-bold mb-3">
+                            Student Management
+                        </h4>
+
+                        <p class="text-secondary mb-0">
+                            Manage student profiles and information
+                            from one organized dashboard.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Course Management -->
+            <div class="col-md-4">
+
+                <div class="card h-100 border shadow-sm rounded-4">
+                    <div class="card-body p-4">
+
+                        <div class="bg-primary-subtle text-primary rounded-3 d-inline-flex p-3 mb-4">
+                            <span class="fs-3">📚</span>
+                        </div>
+
+                        <h4 class="fw-bold mb-3">
+                            Course Management
+                        </h4>
+
+                        <p class="text-secondary mb-0">
+                            Create, update and manage courses
+                            with all important course information.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Easy Enrollment -->
+            <div class="col-md-4">
+
+                <div class="card h-100 border shadow-sm rounded-4">
+                    <div class="card-body p-4">
+
+                        <div class="bg-primary-subtle text-primary rounded-3 d-inline-flex p-3 mb-4">
+                            <span class="fs-3">📝</span>
+                        </div>
+
+                        <h4 class="fw-bold mb-3">
+                            Easy Enrollment
+                        </h4>
+
+                        <p class="text-secondary mb-0">
+                            Students can browse available courses
+                            and manage their enrollments easily.
+                        </p>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- ================= CTA ================= -->
+
+<section class="py-5">
+    <div class="container">
+
+        <div class="bg-dark text-white text-center rounded-4 p-4 p-md-5">
+
+            <h2 class="display-6 fw-bold">
+                Ready to Start Learning?
+            </h2>
+
+            <p class="text-white-50 mx-auto my-4"
+               style="max-width: 550px;">
+
+                Create your CoursePortal account and start
+                managing your academic journey today.
+
+            </p>
+
+            <a asp-area="Identity"
+               asp-page="/Account/Register"
+               class="btn btn-primary btn-lg px-4">
+
+                Create Your Account →
+
+            </a>
+
+        </div>
+
+    </div>
+</section>
