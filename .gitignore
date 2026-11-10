@@ -1,0 +1,17 @@
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# Build outputs
+bin/
+obj/
+
+# Local databases
+*.db
+*.db-shm
+*.db-wal
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
