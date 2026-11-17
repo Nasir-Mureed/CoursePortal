@@ -1,0 +1,155 @@
+@model CoursePortal.Models.ViewModels.MentorHomeViewModel
+@{
+    ViewData["Title"] = "Mentor Home";
+}
+
+<section class="bg-light py-4">
+    <div class="container">
+        <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-2 mb-2">
+            Mentor Dashboard
+        </span>
+        <h1 class="fw-bold mb-1">Mentor Home</h1>
+        <p class="text-secondary mb-0">Overview of courses, students, and enrollments.</p>
+    </div>
+</section>
+
+<div class="container py-5">
+
+    <div class="row g-3 mb-5">
+        <div class="col-md-4">
+            <div class="bg-light rounded-4 p-4 border">
+                <small class="text-secondary">Courses</small>
+                <h2 class="fw-bold mt-2 mb-0">@Model.Courses.Count()</h2>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="bg-light rounded-4 p-4 border">
+                <small class="text-secondary">Students</small>
+                <h2 class="fw-bold mt-2 mb-0">@Model.Students.Count()</h2>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="bg-light rounded-4 p-4 border">
+                <small class="text-secondary">Enrollments</small>
+                <h2 class="fw-bold mt-2 mb-0">@Model.Enrollments.Count()</h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Courses -->
+    <div class="mb-5">
+        <h3 class="fw-bold mb-3">Courses</h3>
+        <div class="card border shadow-sm rounded-4 overflow-hidden">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0 align-middle">
+                    <thead class="table-light">
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Credits</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var course in Model.Courses)
+                    {
+                        <tr>
+                            <td>@course.CourseCode</td>
+                            <td class="fw-semibold">@course.CourseName</td>
+                            <td>@course.Category</td>
+                            <td>@course.Credits</td>
+                            <td>
+                                @if (course.IsActive)
+                                {
+                                    <span class="badge bg-primary">Active</span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">Inactive</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Students -->
+    <div class="mb-5">
+        <h3 class="fw-bold mb-3">Students</h3>
+        <div class="card border shadow-sm rounded-4 overflow-hidden">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0 align-middle">
+                    <thead class="table-light">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Registered</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @if (!Model.Students.Any())
+                    {
+                        <tr>
+                            <td colspan="3" class="text-secondary p-4">No students registered yet.</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        @foreach (var student in Model.Students)
+                        {
+                            <tr>
+                                <td class="fw-semibold">@student.FirstName @student.LastName</td>
+                                <td>@student.Email</td>
+                                <td>@student.RegistrationDate.ToString("MMM dd, yyyy")</td>
+                            </tr>
+                        }
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Enrollments -->
+    <div>
+        <h3 class="fw-bold mb-3">Enrollments</h3>
+        <div class="card border shadow-sm rounded-4 overflow-hidden">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0 align-middle">
+                    <thead class="table-light">
+                    <tr>
+                        <th>Student</th>
+                        <th>Course</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @if (!Model.Enrollments.Any())
+                    {
+                        <tr>
+                            <td colspan="4" class="text-secondary p-4">No enrollments yet.</td>
+                        </tr>
+                    }
+                    else
+                    {
+                        @foreach (var item in Model.Enrollments)
+                        {
+                            <tr>
+                                <td class="fw-semibold">@item.StudentName</td>
+                                <td>@item.CourseName (@item.CourseCode)</td>
+                                <td>@item.EnrollmentDate.ToString("MMM dd, yyyy")</td>
+                                <td><span class="badge bg-success">@item.Status</span></td>
+                            </tr>
+                        }
+                    }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
