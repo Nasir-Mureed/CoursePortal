@@ -25,6 +25,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options =>
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages();
 
 // Dapper repositories
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();

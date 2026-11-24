@@ -1,4 +1,5 @@
 using CoursePortal.Helpers;
+using CoursePortal.Models;
 using CoursePortal.Models.Interfaces;
 using CoursePortal.Models.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -32,5 +33,25 @@ public class MentorController : Controller
             Students = await _students.GetAllStudents(),
             Enrollments = await _enrollments.GetAllEnrollments()
         });
+    }
+
+    [HttpGet]
+    public IActionResult CreateCourse()
+    {
+        return View(new Course { IsActive = true });
+    }
+
+    [HttpPost]
+    [ValidateAntiForgeryToken]
+    public async Task<IActionResult> CreateCourse(Course course)
+    {
+        if (!ModelState.IsValid)
+            return View(course);
+
+        course.CreatedDate = DateTime.Now;
+        await _courses.AddCourse(course);
+
+        TempData["Success"] = "Course created successfully!";
+        return RedirectToAction(nameof(Home));
     }
 }

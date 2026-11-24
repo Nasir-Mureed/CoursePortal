@@ -1,0 +1,89 @@
+@model CoursePortal.Models.Course
+@{
+    ViewData["Title"] = "Create Course";
+}
+
+<section class="bg-light py-4">
+    <div class="container">
+        <span class="badge bg-primary-subtle text-primary border border-primary-subtle rounded-pill px-3 py-2 mb-2">
+            Course Management
+        </span>
+        <h1 class="fw-bold mb-1">Create New Course</h1>
+        <p class="text-secondary mb-0">Add a new course to your CoursePortal.</p>
+    </div>
+</section>
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-9">
+            <div class="card border shadow-sm rounded-4">
+                <div class="card-body p-4 p-md-5">
+                    <form asp-action="CreateCourse" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <label asp-for="CourseName" class="form-label fw-semibold">Course Name</label>
+                                <input asp-for="CourseName" class="form-control" placeholder="Enter course name" />
+                                <span asp-validation-for="CourseName" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label asp-for="CourseCode" class="form-label fw-semibold">Course Code</label>
+                                <input asp-for="CourseCode" class="form-control" placeholder="e.g. CS101" />
+                                <span asp-validation-for="CourseCode" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-12">
+                                <label asp-for="Description" class="form-label fw-semibold">Description</label>
+                                <textarea asp-for="Description" class="form-control" rows="4"
+                                          placeholder="Enter course description"></textarea>
+                                <span asp-validation-for="Description" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label asp-for="Credits" class="form-label fw-semibold">Credits</label>
+                                <input asp-for="Credits" type="number" class="form-control" placeholder="e.g. 3" />
+                                <span asp-validation-for="Credits" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label asp-for="Duration" class="form-label fw-semibold">Duration</label>
+                                <input asp-for="Duration" class="form-control" placeholder="e.g. 3 Months" />
+                                <span asp-validation-for="Duration" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label asp-for="Category" class="form-label fw-semibold">Category</label>
+                                <input asp-for="Category" class="form-control" placeholder="e.g. Programming" />
+                                <span asp-validation-for="Category" class="text-danger small"></span>
+                            </div>
+
+                            <div class="col-md-6">
+                                <label class="form-label fw-semibold">Course Status</label>
+                                <div class="form-check mt-2">
+                                    <input asp-for="IsActive" class="form-check-input" />
+                                    <label asp-for="IsActive" class="form-check-label">Active Course</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4">
+
+                        <div class="d-flex gap-2 justify-content-end">
+                            <a asp-action="Home" class="btn btn-outline-secondary px-4">Cancel</a>
+                            <button type="submit" class="btn btn-primary px-4">
+                                <i class="bi bi-plus-circle me-1"></i>
+                                Create Course
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
